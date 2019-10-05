@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>bookoo-detail</ion-title>
-  </ion-toolbar>
+    <ion-title>Bookoo</ion-title>
+    <ion-buttons slot="primary">
+        <ion-button>
+          <ion-icon slot="icon-only" name="contact"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let book of loadedBookoo">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="book.imageUrl"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h1>{{ book.title }}</h1>
+        <p>{{ book.description }}</p>
+        <ion-icon name="book"></ion-icon>
+        <span>{{ book.category}}</span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

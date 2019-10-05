@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Bookoo } from 'src/app/model/bookoo.model';
+import { BookooService } from '../bookoo.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-bookoo-detail',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookooDetailPage implements OnInit {
 
-  constructor() { }
+  loadedBookoo: Bookoo[];
+
+  constructor(private bookooService: BookooService,
+    private modalCtrl: ModalController) { }
 
   ngOnInit() {
+    this.loadedBookoo = this.bookooService.allBookoo;
   }
 
 }

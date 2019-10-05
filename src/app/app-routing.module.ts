@@ -5,7 +5,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'bookoo', pathMatch: 'full' },
   { path: 'bookoo', loadChildren: './bookoo/bookoo.module#BookooPageModule' },
   { path: 'bookoo-detail', loadChildren: './bookoo/bookoo-detail/bookoo-detail.module#BookooDetailPageModule' },
-  { path: 'favorit', loadChildren: './bookoo/favorit/favorit.module#FavoritPageModule' },
+  { path: 'profil', loadChildren: './profil/profil.module#ProfilPageModule' },
+
 ];
 
 @NgModule({
