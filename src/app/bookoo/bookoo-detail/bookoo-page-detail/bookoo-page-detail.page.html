@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/bookoo-detail"></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ loadedBookoo.title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-no-padding">
+          <ion-img [src]="loadedBookoo.imageUrl"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <p>{{ loadedBookoo.description}}</p>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

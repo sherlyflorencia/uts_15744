@@ -6,5 +6,6 @@ export class Bookoo{
         public category: string,
         public imageUrl: string,
         public icon: string,
+        public liked: string,
     ){}
 }

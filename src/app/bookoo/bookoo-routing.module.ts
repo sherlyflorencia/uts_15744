@@ -31,7 +31,8 @@ const routes: Routes =[
     path: '',
     redirectTo: '/bookoo/tabs/utama',
     pathMatch: 'full'
-  }
+  },  { path: 'bookoo-page-detail', loadChildren: './bookoo-detail/bookoo-page-detail/bookoo-page-detail.module#BookooPageDetailPageModule' }
+
   // { path: 'modal', loadChildren: './modal/modal.module#ModalPageModule' }
 ];
 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Bookoo } from 'src/app/model/bookoo.model';
 import { BookooService } from '../bookoo.service';
 import { ModalController } from '@ionic/angular';
-
 @Component({
   selector: 'app-bookoo-detail',
   templateUrl: './bookoo-detail.page.html',
@@ -12,11 +11,14 @@ export class BookooDetailPage implements OnInit {
 
   loadedBookoo: Bookoo[];
 
-  constructor(private bookooService: BookooService,
+  constructor(
+    private bookooService: BookooService,
     private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.loadedBookoo = this.bookooService.allBookoo;
   }
-
+  addToFav(book: Bookoo){
+    this.bookooService.addFav(book.id);
+  }
 }
