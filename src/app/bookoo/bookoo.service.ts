@@ -89,8 +89,12 @@ export class BookooService {
       'heart-empty'
     ),
   ];
+  private myBooks: Bookoo[] = [];
   get allBookoo(){
     return[...this._bookoo];
+  }
+  get allMyBookoo(){
+    return[...this.myBooks];
   }
 
   getBookoo(bookooId: string){

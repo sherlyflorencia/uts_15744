@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Bookoo } from 'src/app/model/bookoo.model';
 import { BookooService } from '../bookoo.service';
-import { ModalController } from '@ionic/angular';
+import { FavoritService } from 'src/app/bookoo/favorit/favorit.service';
+import { ModalController, IonItemSliding } from '@ionic/angular';
 @Component({
   selector: 'app-bookoo-detail',
   templateUrl: './bookoo-detail.page.html',
@@ -13,6 +14,7 @@ export class BookooDetailPage implements OnInit {
 
   constructor(
     private bookooService: BookooService,
+    private favoriteService: FavoritService,
     private modalCtrl: ModalController) { }
 
   ngOnInit() {
@@ -20,5 +22,7 @@ export class BookooDetailPage implements OnInit {
   }
   addToFav(book: Bookoo){
     this.bookooService.addFav(book.id);
+    this.favoriteService.addNewFavBook(book);
   }
+
 }

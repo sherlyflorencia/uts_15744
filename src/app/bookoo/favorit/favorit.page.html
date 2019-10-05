@@ -4,6 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-
+<ion-content>
+  <ion-title *ngIf="faveBook.length == 0">
+    Anda Belum Memiliki Buku Favorit
+  </ion-title>
+  <ion-list>
+      <ion-item *ngFor="let book of faveBook" (click)="hapus(book.id)" >
+        <ion-thumbnail slot="start">
+          <ion-img [src]="book.imageUrl"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h1>{{ book.title }}</h1>
+          <p>{{ book.description }}</p>
+          <ion-icon name="book"></ion-icon>
+          <span>{{ book.category}}</span>
+        </ion-label>
+        <ion-icon slot="end" color="danger" name="{{book.liked}}"></ion-icon>
+      </ion-item>
+    </ion-list>
 </ion-content>
